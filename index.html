@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>navigator.connection.type Example</title>
+
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8">
+
+   
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+  
+    function onDeviceReady() {
+        checkConnection();
+    }
+
+    function checkConnection() {
+        var networkState = navigator.connection.type;
+
+        var states = {};
+        states[Connection.UNKNOWN]  = 'no se sabe';
+        states[Connection.ETHERNET] = 'Ethernet conexión';
+        states[Connection.WIFI]     = 'WiFi conexión';
+        states[Connection.CELL_2G]  = 'Cell 2G conexión';
+        states[Connection.CELL_3G]  = 'Cell 3G conexión';
+        states[Connection.CELL_4G]  = 'Cell 4G conexión';
+        states[Connection.NONE]     = 'Sin conexión';
+
+        document.write('Tipo de conexión ' + states[networkState]);
+    }
+
+    </script>
+  </head>
+  <body>
+    <div>Te van a mostrar qué tipo de conexión tienes</div>
+  </body>
+</html>
